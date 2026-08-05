@@ -36,39 +36,7 @@
 
 
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="{{ url('/') }}" class="logo">Vacation Rental<em> Website</em></a>
-                        <!-- ***** Logo End ***** -->
-
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('/ilanlar') }}">Vacations</a></li>
-                            <li><a href="{{ url('/blog') }}">Blog</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item active" href="{{ url('/hakkimizda') }}">About Us</a>
-                                    <a class="dropdown-item" href="#">Testimonials</a>
-                                    <a class="dropdown-item" href="{{ url('/sartlar') }}">Terms</a>
-                                </div>
-                            </li>
-                            <li><a href="contact.blade.php">Contact</a></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
+    @extends("layouts.navbar")
     <!-- ***** Header Area End ***** -->
 
     <section class="section section-bg" id="call-to-action" style="background-image: url('{{asset('assets/images/banner-image-1-1920x500.jpg')}}')">

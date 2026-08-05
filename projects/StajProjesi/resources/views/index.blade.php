@@ -36,39 +36,7 @@
 
 
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="{{asset('index.html')}}" class="logo">Vacation Rental<em> Website</em></a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li><a href="{{asset('index.html')}}" class="active">Home</a></li>
-                            <li><a href="vacations.blade.php">Vacations</a></li>
-                            <li><a href="blog.blade.php">Blog</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="about.blade.php">About Us</a>
-                                    <a class="dropdown-item" href="testimonials.blade.php">Testimonials</a>
-                                    <a class="dropdown-item" href="terms.blade.php">Terms</a>
-                                </div>
-                            </li>
-                            <li><a href="contact.blade.php">Contact</a></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
+    @extends("layouts.navbar")
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** -->
