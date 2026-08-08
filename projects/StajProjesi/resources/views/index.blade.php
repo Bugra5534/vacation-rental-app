@@ -50,7 +50,7 @@
                 <h6>Lorem ipsum dolor sit amet</h6>
                 <h2>A perfect <em>Vacation Rental</em></h2>
                 <div class="main-button">
-                    <a href="contact.blade.php">Contact Us</a>
+                    <a href="{{route('contact')}}">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Featured <em>Vacations</em></h2>
+                        <h2>Öne Çıkan <em>Daireler</em></h2>
                         <img src="{{asset('assets/images/line-dec.png')}}" alt="">
                         <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
                     </div>
