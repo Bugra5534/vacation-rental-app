@@ -61,8 +61,8 @@
         <div class="container">
             <br>
             <br>
-
             <div class="row">
+            @foreach($mappingVacation as $vacation)
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
@@ -70,133 +70,25 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>$</sup>500.00 - <sup>$</sup>700.00
+                                <sup></sup>{{$vacation->pricerange}}<sup></sup>
                             </span>
 
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
+                            <h4>{{$vacation->title}}</h4>
 
                             <p>
-                                <i class="fa fa-map-marker"></i> 6 Regeneration Road, SE16 2NX
+                                <i class="fa fa-map-marker"></i> {{$vacation->location}}
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="vacation-details.blade.php">+ View More</a></li>
+                                <li><a href="vacation-details.blade.php">+ Daha Fazla Detay</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="trainer-item">
-                        <div class="image-thumb">
-                            <img src="{{asset('assets/images/product-2-720x480.jpg')}}" alt="">
-                        </div>
-                        <div class="down-content">
-                            <span>
-                                <sup>$</sup>500.00 - <sup>$</sup>700.00
-                            </span>
-
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-
-                            <p>
-                                <i class="fa fa-map-marker"></i> 6 Regeneration Road, SE16 2NX
-                            </p>
-
-                            <ul class="social-icons">
-                                <li><a href="vacation-details.blade.php">+ View More</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                @endforeach
                 </div>
-                <div class="col-lg-4">
-                    <div class="trainer-item">
-                        <div class="image-thumb">
-                            <img src="{{asset('assets/images/product-3-720x480.jpg')}}" alt="">
-                        </div>
-                        <div class="down-content">
-                            <span>
-                                <sup>$</sup>500.00 - <sup>$</sup>700.00
-                            </span>
-
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-
-                            <p>
-                                <i class="fa fa-map-marker"></i> 6 Regeneration Road, SE16 2NX
-                            </p>
-
-                            <ul class="social-icons">
-                                <li><a href="vacation-details.blade.php">+ View More</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="trainer-item">
-                        <div class="image-thumb">
-                            <img src="{{asset('assets/images/product-4-720x480.jpg')}}" alt="">
-                        </div>
-                        <div class="down-content">
-                            <span>
-                                <sup>$</sup>500.00 - <sup>$</sup>700.00
-                            </span>
-
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-
-                            <p>
-                                <i class="fa fa-map-marker"></i> 6 Regeneration Road, SE16 2NX
-                            </p>
-
-                            <ul class="social-icons">
-                                <li><a href="vacation-details.blade.php">+ View More</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="trainer-item">
-                        <div class="image-thumb">
-                            <img src="{{asset('assets/images/product-5-720x480.jpg')}}" alt="">
-                        </div>
-                        <div class="down-content">
-                            <span>
-                                <sup>$</sup>500.00 - <sup>$</sup>700.00
-                            </span>
-
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-
-                            <p>
-                                <i class="fa fa-map-marker"></i> 6 Regeneration Road, SE16 2NX
-                            </p>
-
-                            <ul class="social-icons">
-                                <li><a href="vacation-details.blade.php">+ View More</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="trainer-item">
-                        <div class="image-thumb">
-                            <img src="{{asset('assets/images/product-6-720x480.jpg')}}" alt="">
-                        </div>
-                        <div class="down-content">
-                            <span>
-                                <sup>$</sup>500.00 - <sup>$</sup>700.00
-                            </span>
-
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
-
-                            <p>
-                                <i class="fa fa-map-marker"></i> 6 Regeneration Road, SE16 2NX
-                            </p>
-
-                            <ul class="social-icons">
-                                <li><a href="vacation-details.blade.php">+ View More</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+             </div>
+    </section>
 
             <br>
 
