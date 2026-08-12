@@ -1,39 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-
-    <title>PHPJabbers.com | Free Vacation Rental Website Template</title>
-
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
-
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.css')}}">
-
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-
-    </head>
-
-    <body>
-
-    <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-      <div class="preloader-inner">
-        <span class="dot"></span>
-        <div class="dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
-
 
     <!-- ***** Header Area Start ***** -->
     @extends("layouts.navbar")
@@ -53,7 +20,7 @@
                         <p>{{$vacationdetail->title}}</p>
 
                         <div class="main-button">
-                          <a href="#" data-toggle="modal" data-target="#exampleModal">Enquiry</a>
+                          <a href="#" data-toggle="modal" data-target="#exampleModal">Başvuru Formu</a>
                         </div>
                     </div>
                 </div>
@@ -101,17 +68,16 @@
             <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
-                  <li><a href='#tabs-1'><i class="fa fa-star"></i> Vacation Extras</a></li>
-                  <li><a href='#tabs-2'><i class="fa fa-gift"></i> Vacation Description</a></li>
-                  <li><a href='#tabs-3'><i class="fa fa-plus-circle"></i> Availability &amp; Prices</a></li>
-                  <li><a href='#tabs-4'><i class="fa fa-info-circle"></i> Vacation Info</a></li>
-                  <li><a href='#tabs-5'><i class="fa fa-phone"></i> Contact Details</a></li>
+                  <li><a href='#tabs-1'><i class="fa fa-star"></i> Evin Ayrıcalıkları</a></li>
+                  <li><a href='#tabs-2'><i class="fa fa-gift"></i> Ev Hakkında</a></li>
+                  <li><a href='#tabs-3'><i class="fa fa-plus-circle"></i> Tarih &amp; Fiyatlar</a></li>
+                  <li><a href='#tabs-5'><i class="fa fa-phone"></i> İletişim Bilgileri</a></li>
                 </ul>
               </div>
               <div class="col-lg-8">
                 <section class='tabs-content' style="width: 100%;">
                   <article id='tabs-1'>
-                    <h4>Vacation Extras</h4>
+                    <h4>Evin Ayrıcalıkları</h4>
                       <div class="row">
                     @foreach($vacationdetailextra as $extras)
 
@@ -126,165 +92,59 @@
                     </div>
                   </article>
                   <article id='tabs-2'>
-                    <h4>Vacation Description</h4>
+                    <h4>Ev Hakkında</h4>
 
                     <p>{{$vacationdetail->description}}</p>
 
                    </article>
                   <article id='tabs-3'>
-                    <h4>Availability &amp; Prices</h4>
+                    <h4>Tarih & Fiyatlar</h4>
 
                     <div class="table-responsive">
                       <table class="table">
                          <thead>
                               <tr>
-                                   <th>Package</th>
-                                   <th>From</th>
-                                   <th>To</th>
-                                   <th>Price</th>
+                                   <th>Paket</th>
+                                   <th>Başlangıç</th>
+                                   <th>Bitiş</th>
+                                   <th>Fiyat</th>
                               </tr>
                          </thead>
 
+                          @foreach($vacationdetailprice as $price)
                          <tbody>
                               <tr>
                                    <td></td>
-                                   <td>01-06-2020</td>
-                                   <td>31-12-2020</td>
-                                   <td>€ 300 per night</td>
+                                   <td>{{$price->start_date}}</td>
+                                   <td>{{$price->end_date}}</td>
+                                   <td>{{$price->price . "TL"}}</td>
                               </tr>
-
-                              <tr>
-                                   <td></td>
-                                   <td>01-06-2020</td>
-                                   <td>31-12-2020</td>
-                                   <td>€ 300 per night</td>
-                              </tr>
-
-                              <tr>
-                                   <td></td>
-                                   <td>01-06-2020</td>
-                                   <td>31-12-2020</td>
-                                   <td>€ 300 per night</td>
-                              </tr>
-                              <tr>
-                                   <td></td>
-                                   <td>01-06-2020</td>
-                                   <td>31-12-2020</td>
-                                   <td>€ 4000 total price</td>
-                              </tr>
+                              @endforeach
                          </tbody>
                       </table>
                     </div>
                   </article>
-                  <article id='tabs-4'>
-                    <h4>Vacation Info</h4>
-
-                    <ul class="list-group list-group-no-border">
-                      <li class="list-group-item" style="margin:0 0 -1px">
-                         <div class="row">
-                              <div class="col-md-2 col-sm-3">
-                                   <p class="pjVpProductPolicyTitle">
-                                        <strong>Check-in</strong>
-                                   </p>
-                              </div>
-                              <div class="col-md-10 col-sm-9">
-                                   <p>
-                                        Donec dapibus semper sem, ac ultrices sem sagittis ut. Donec sit amet erat elit, sed pellentesque odio. In enim ligula, euismod a adipiscing in, laoreet quis turpis. Ut accumsan dignissim rutrum.
-                                   </p>
-                              </div>
-                         </div>
-                      </li>
-
-                      <li class="list-group-item" style="margin:0 0 -1px">
-                           <div class="row">
-                                <div class="col-md-2 col-sm-3">
-                                     <p>
-                                          <strong>Check-out</strong>
-                                     </p>
-                                </div>
-
-                                <div class="col-md-10 col-sm-9">
-                                     <p>
-                                          Donec dapibus semper sem, ac ultrices sem sagittis ut. Donec sit amet erat elit, sed pellentesque odio. In enim ligula, euismod a adipiscing in, laoreet quis turpis. Ut accumsan dignissim rutrum.
-                                     </p>
-                                </div>
-                           </div>
-                      </li>
-
-                      <li class="list-group-item" style="margin:0 0 -1px">
-                           <div class="row">
-                                <div class="col-md-2 col-sm-3">
-                                     <p>
-                                          <strong>Pets</strong>
-                                     </p>
-                                </div>
-                                <div class="col-md-10 col-sm-9">
-                                     <p>
-                                          Not allowed
-                                     </p>
-                                </div>
-                           </div>
-                      </li>
-
-                      <li class="list-group-item" style="margin:0 0 -1px">
-                           <div class="row">
-                                <div class="col-md-2 col-sm-3">
-                                     <p>
-                                          <strong>Policies</strong>
-                                     </p>
-                                </div>
-                                <div class="col-md-10 col-sm-9">
-                                     <div>
-                                          <p>
-                                               Donec dapibus semper sem, ac ultrices sem sagittis ut. Donec sit amet erat elit, sed pellentesque odio. In enim ligula, euismod a adipiscing in, laoreet quis turpis. Ut accumsan dignissim rutrum. <br>
-                                                Donec dapibus semper sem, ac ultrices sem sagittis ut. Donec sit amet erat elit, sed pellentesque odio. In enim ligula, euismod a adipiscing in, laoreet quis turpis. Ut accumsan dignissim rutrum. <br>
-                                          </p>
-                                     </div>
-                                </div>
-                           </div>
-                      </li>
-
-                      <li class="list-group-item" style="margin:0 0 -1px">
-                           <div class="row">
-                                <div class="col-md-2 col-sm-3">
-                                     <p>
-                                          <strong>Fees</strong>
-                                     </p>
-                                </div>
-
-                                <div class="col-md-10 col-sm-9">
-                                     <div>
-                                          <p>
-                                               Donec dapibus semper sem, ac ultrices sem sagittis ut. Donec sit amet erat elit, sed pellentesque odio. In enim ligula, euismod a adipiscing in, laoreet quis turpis. Ut accumsan dignissim rutrum. <br>
-                                                Donec dapibus semper sem, ac ultrices sem sagittis ut. Donec sit amet erat elit, sed pellentesque odio. In enim ligula, euismod a adipiscing in, laoreet quis turpis. Ut accumsan dignissim rutrum. <br>
-                                          </p>
-                                     </div>
-                                </div>
-                           </div>
-                      </li>
-                    </ul>
-                  </article>
                   <article id='tabs-5'>
-                    <h4>Contact Details</h4>
+                    <h4>İletişim Bilgileri</h4>
 
                     <div class="row">
                         <div class="col-sm-6">
-                            <label>Name</label>
+                            <label>İsim Soyisim</label>
 
-                            <p>John Smith</p>
+                            <p>Buğra Karkucak</p>
                         </div>
                         <div class="col-sm-6">
-                            <label>Phone</label>
+                            <label>Numara</label>
 
                             <p>123-456-789 </p>
                         </div>
                         <div class="col-sm-6">
-                            <label>Mobile phone</label>
+                            <label>Cep Numarası</label>
                             <p>456789123 </p>
                         </div>
                         <div class="col-sm-6">
                             <label>Email</label>
-                            <p><a href="#">john@carsales.com</a></p>
+                            <p><a href="#">bugrakarkucakk@gmail.com</a></p>
                         </div>
                     </div>
 
@@ -297,20 +157,7 @@
     </section>
     <!-- ***** Fleet Ends ***** -->
 
-    <!-- ***** Footer Start ***** -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>
-                        Copyright © 2020 Company Name
-                        - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+ @extends("layouts.footer")
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
@@ -373,24 +220,3 @@
         </div>
       </div>
     </div>
-
-    <!-- jQuery -->
-    <script src="{{asset('assets/js/jquery-2.1.0.min.js')}}"></script>
-
-    <!-- Bootstrap -->
-    <script src="{{asset('assets/js/popper.js')}}"></script>
-    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-
-    <!-- Plugins -->
-    <script src="{{asset('assets/js/scrollreveal.min.js')}}"></script>
-    <script src="{{asset('assets/js/waypoints.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('assets/js/imgfix.min.js')}}"></script>
-    <script src="{{asset('assets/js/mixitup.js')}}"></script>
-    <script src="{{asset('assets/js/accordions.js')}}"></script>
-
-    <!-- Global Init -->
-    <script src="{{asset('assets/js/custom.js')}}"></script>
-
-  </body>
-</html>

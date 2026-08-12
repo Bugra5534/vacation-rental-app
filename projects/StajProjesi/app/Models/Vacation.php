@@ -32,17 +32,15 @@ class Vacation extends Model
             ->first();
     }
     public static function getVacationDetailExtras($id){
-        return DB::table('vacations')
-            ->leftjoin('vacation_extras', 'vacations.id', '=', 'vacation_extras.vacation_id')
+        return DB::table('vacation_extras')
             ->leftJoin('extras', 'vacation_extras.extra_id', '=', 'extras.id')
-            ->where('vacations.id', $id)
-            ->get(['vacations.*', 'vacation_extras.*', 'extras.name']);
+            ->where('vacation_extras.vacation_id',$id)
+            ->get(['vacation_extras.*', 'extras.name']);
     }
 
     public static function getVacationPrices($id){
-        return DB::table('vacations')
-            ->leftjoin('vacation_prices', 'vacations.id', '=', 'vacation_prices.vacation_id')
-            ->where('vacations.id', $id)
+        return DB::table('vacation_prices')
+            ->where('vacation_prices.vacation_id', $id)
             ->get(['vacation_prices.*']);
 
 
