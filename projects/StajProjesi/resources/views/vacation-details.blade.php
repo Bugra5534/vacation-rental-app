@@ -40,6 +40,8 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Call to Action Start ***** -->
+
+
     <section class="section section-bg" id="call-to-action" style="background-image: url('{{('assets/images/banner-image-1-1920x500.jpg')}}')">
         <div class="container">
             <div class="row">
@@ -47,8 +49,8 @@
                     <div class="cta-content">
                         <br>
                         <br>
-                        <h2><em>$500.00 - $700.00</em></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                        <h2><em>{{$vacationdetailprice->pricerange}}</em></h2>
+                        <p>{{$vacationdetail->title}}</p>
 
                         <div class="main-button">
                           <a href="#" data-toggle="modal" data-target="#exampleModal">Enquiry</a>
@@ -110,45 +112,24 @@
                 <section class='tabs-content' style="width: 100%;">
                   <article id='tabs-1'>
                     <h4>Vacation Extras</h4>
+                      <div class="row">
+                    @foreach($vacationdetailextra as $extras)
 
-                    <div class="row">
-                       <div class="col-sm-6">
-                            <p>Air condition</p>
-                       </div>
-
-                       <div class="col-sm-6">
-                            <p>Pool</p>
-                       </div>
+                   @if($extras->extra_id)
 
                        <div class="col-sm-6">
-                            <p>Fully equipped kitchen</p>
+                            <p>{{$extras->name}}</p>
                        </div>
+                        @endif
+                        @endforeach
 
-                       <div class="col-sm-6">
-                            <p>6 Regeneration Road, SE16 2NX, London</p>
-                       </div>
-
-                       <div class="col-sm-6">
-                            <p>Lorem ipsum dolor sit amet</p>
-                       </div>
-
-                       <div class="col-sm-6">
-                            <p>Consectetur adipisicing elit</p>
-                       </div>
-
-                       <div class="col-sm-6">
-                            <p>Enim similique</p>
-                       </div>
                     </div>
                   </article>
                   <article id='tabs-2'>
                     <h4>Vacation Description</h4>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia doloremque sit, enim sint odio corporis illum perferendis, unde repellendus aut dolore doloribus minima qui ullam vel possimus magnam ipsa deleniti.</p>
+                    <p>{{$vacationdetail->description}}</p>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ducimus ab numquam magnam aliquid, odit provident consectetur corporis eius blanditiis alias nulla commodi qui voluptatibus laudantium quaerat tempore possimus esse nam sed accusantium inventore? Sapiente minima dicta sed quia sunt?</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum qui, corrupti consequuntur. Officia consectetur error amet debitis esse minus quasi, dicta suscipit tempora, natus, vitae voluptatem quae libero. Sunt nulla culpa impedit! Aliquid cupiditate, impedit reiciendis dolores, illo adipisci, omnis dolor distinctio voluptas expedita maxime officiis maiores cumque sequi quaerat culpa blanditiis. Quia tenetur distinctio rem, quibusdam officiis voluptatum neque!</p>
                    </article>
                   <article id='tabs-3'>
                     <h4>Availability &amp; Prices</h4>

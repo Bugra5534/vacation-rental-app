@@ -80,7 +80,7 @@
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="vacation-details.blade.php">+ Daha Fazla Detay</a></li>
+                                <li><a href="{{route('vacationdetail', $vacation->id)}}">+ Daha Fazla Detay</a></li>
                             </ul>
                         </div>
                     </div>
@@ -111,9 +111,6 @@
                 </li>
               </ul>
             </nav>
-
-        </div>
-    </section>
     <!-- ***** Fleet Ends ***** -->
 
 

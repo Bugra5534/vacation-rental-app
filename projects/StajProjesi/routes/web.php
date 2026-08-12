@@ -13,7 +13,7 @@ Route::get('/hakkimizda', [AboutController::class, 'index'])->name('about');
 Route::get('/iletisim', [ContactController::class, 'index'])->name('contact');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/liste' , [VacationsController::class ,'index'])->name('vacations');
-Route::get('/listedetay', [VacationsController::class, 'detail'])->name('vacationdetail');
+Route::get('/liste/{id}', [VacationsController::class, 'detail'])->name('vacationdetail');
 Route::get('/blogdetay', [BlogController::class, 'detail'])->name('blogdetail');
 
 

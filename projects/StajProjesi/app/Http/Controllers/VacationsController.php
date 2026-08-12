@@ -22,7 +22,17 @@ class VacationsController extends Controller
         return view('vacations', compact('mappingVacation'));
     }
 
-    function detail(){
-        return view('vacation-details');
+    function detail($id){
+        $vacationdetail = Vacation::getVacationDetails($id);
+        $vacationdetailextra = Vacation::getVacationDetailExtras($id);
+        $vacationdetailprice = Vacation::getVacationPrices($id);
+
+        $minPrice = $vacationdetailprice->min('price');
+        $maxPrice = $vacationdetailprice->max('price');
+
+        $vacationdetailprice->pricerange = $minPrice . "TL - " . $maxPrice . "TL";
+
+
+        return view('vacation-details', compact('vacationdetail', 'vacationdetailextra', 'vacationdetailprice'));
     }
 }
