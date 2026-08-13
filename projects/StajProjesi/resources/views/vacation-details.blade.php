@@ -3,7 +3,7 @@
 
 
     <!-- ***** Header Area Start ***** -->
-    @extends("layouts.navbar")
+    @include("layouts.navbar")
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Call to Action Start ***** -->
@@ -157,13 +157,13 @@
     </section>
     <!-- ***** Fleet Ends ***** -->
 
- @extends("layouts.footer")
+ @include("layouts.footer")
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Enquiry</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Başvuru Formu</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -175,13 +175,13 @@
                   <div class="row">
                        <div class="col-md-6">
                           <fieldset>
-                            <input type="text" class="form-control" placeholder="Enter full name" required="">
+                            <input type="text" class="form-control" placeholder="Tam isminizi giriniz" required="">
                           </fieldset>
                        </div>
 
                        <div class="col-md-6">
                           <fieldset>
-                            <input type="text" class="form-control" placeholder="Enter email address" required="">
+                            <input type="text" class="form-control" placeholder="Email adresi giriniz" required="">
                           </fieldset>
                        </div>
                   </div>
@@ -189,7 +189,7 @@
                   <div class="row">
                        <div class="col-md-6">
                           <fieldset>
-                            <input type="text" class="form-control" placeholder="Enter phone" required="">
+                            <input type="text" class="form-control" placeholder="Telefon numarası giriniz" required="">
                           </fieldset>
                        </div>
 
@@ -197,13 +197,13 @@
                           <div class="row">
                              <div class="col-md-6">
                                 <fieldset>
-                                  <input type="text" class="form-control" placeholder="From date" required="">
+                                  <input type="text" class="form-control" placeholder="Başlangıç tarihi" required="">
                                 </fieldset>
                              </div>
 
                              <div class="col-md-6">
                                 <fieldset>
-                                  <input type="text" class="form-control" placeholder="To date" required="">
+                                  <input type="text" class="form-control" placeholder="Bitiş tarihi" required="">
                                 </fieldset>
                              </div>
                           </div>
@@ -214,9 +214,10 @@
            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Send Request</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+            <button type="button" class="btn btn-primary">Gönder</button>
           </div>
         </div>
       </div>
     </div>
+

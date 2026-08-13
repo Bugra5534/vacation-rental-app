@@ -4,7 +4,7 @@
 
 
     <!-- ***** Header Area Start ***** -->
-    @extends("layouts.navbar")
+    @include("layouts.navbar")
     <!-- ***** Header Area End ***** -->
 
     <section class="section section-bg" id="call-to-action" style="background-image: url('{{asset('assets/images/banner-image-1-1920x500.jpg')}}')">
@@ -135,4 +135,4 @@
     </section>
     <!-- ***** Blog End ***** -->
 
-@extends("layouts.footer")
+@include("layouts.footer")

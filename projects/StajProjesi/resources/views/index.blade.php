@@ -2,7 +2,7 @@
 <html lang="en">
 
     <!-- ***** Header Area Start ***** -->
-    @extends("layouts.navbar")
+    @include("layouts.navbar")
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** -->
@@ -16,7 +16,7 @@
                 <h6>Yıldızların altında, sınırları aşan bir tatil deneyimi</h6>
                 <h2>Yıldızların altında <em>sınırları aşan bir tatil deneyimi</em></h2>
                 <div class="main-button">
-                    <a href="{{route('contact')}}">Contact Us</a>
+                    <a href="{{route('contact')}}">Bize Ulaşın</a>
                 </div>
             </div>
         </div>
@@ -279,4 +279,4 @@
     </section>
     <!-- ***** Testimonials Item End ***** -->
 
-@extends("layouts.footer")
+@include("layouts.footer")

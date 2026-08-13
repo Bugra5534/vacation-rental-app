@@ -8,17 +8,19 @@ use Illuminate\Http\Request;
 class VacationsController extends Controller
 {
     function index(){
-        $vacations = Vacation::getVacationCard();
+//        $vacations = Vacation::getVacationCard();
 
+//        $mappingVacation = $vacations->groupBy('id')->map(function ($pricegroup) {
+//
+//            $price = $pricegroup->first();
+//
+//            $price->pricerange = $pricegroup->min('price') . "TL - " . $pricegroup->max('price') . "TL";
+//
+//            return $price;
+//        });
 
-        $mappingVacation = $vacations->groupBy('id')->map(function ($pricegroup) {
+        $mappingVacation = Vacation::getPaginatedVacations(1);
 
-            $price = $pricegroup->first();
-
-            $price->pricerange = $pricegroup->min('price') . "TL - " . $pricegroup->max('price') . "TL";
-
-            return $price;
-        });
         return view('vacations', compact('mappingVacation'));
     }
 

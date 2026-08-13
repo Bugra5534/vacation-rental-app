@@ -2,7 +2,7 @@
 <html lang="en">
 
     <!-- ***** Header Area Start ***** -->
-    @extends("layouts.navbar")
+    @include("layouts.navbar")
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Call to Action Start ***** -->
@@ -13,8 +13,8 @@
                     <div class="cta-content">
                         <br>
                         <br>
-                        <h2>Our <em>Packages</em></h2>
-                        <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula</p>
+                        <h2>ÖNE ÇIKAN <em>İLANLARIMIZ</em></h2>
+                        <p>Özenle seçilmiş, her bütçeye ve zevke uygun konaklama seçeneklerimizi keşfedin. Hayalinizdeki tatil sadece bir tık uzağınızda.</p>
                     </div>
                 </div>
             </div>
@@ -34,9 +34,10 @@
                         <div class="image-thumb">
                             <img src="{{asset('assets/images/product-1-720x480.jpg')}}" alt="">
                         </div>
+
                         <div class="down-content">
                             <span>
-                                <sup></sup>{{$vacation->pricerange}}<sup></sup>
+                                <sup></sup>{{ $vacation->min_price }}TL - {{ $vacation->max_price }}TL<sup></sup>
                             </span>
 
                             <h4>{{$vacation->title}}</h4>
@@ -55,63 +56,34 @@
                 </div>
              </div>
     </section>
+    <style>
+        /* Aktif (Bulunduğun) sayfanın arka planını turuncu yapar */
+        .pagination .page-item.active .page-link {
+            background-color: #f35525 !important;
+            border-color: #f35525 !important;
+            color: white !important;
+        }
 
+        /* Diğer pasif sayfaların ve okların yazı rengini turuncu yapar */
+        .pagination .page-link {
+            color: #f35525 !important;
+        }
+
+        /* Üzerine mouse ile gelince (hover) turuncu dolgu verir */
+        .pagination .page-link:hover {
+            background-color: #f35525 !important;
+            color: white !important;
+            border-color: #f35525 !important;
+        }
+    </style>
             <br>
-
             <nav>
               <ul class="pagination pagination-lg justify-content-center">
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </li>
+                  <div class="row">
+                      {{ $mappingVacation->links() }}
+                  </div>
               </ul>
             </nav>
     <!-- ***** Fleet Ends ***** -->
 
-
-    <!-- ***** Footer Start ***** -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>
-                        Copyright © 2020 Company Name
-                        - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="{{asset('assets/js/jquery-2.1.0.min.js')}}"></script>
-
-    <!-- Bootstrap -->
-    <script src="{{asset('assets/js/popper.js')}}"></script>
-    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-
-    <!-- Plugins -->
-    <script src="{{asset('assets/js/scrollreveal.min.js')}}"></script>
-    <script src="{{asset('assets/js/waypoints.min.js')}}"></script>
-    <script src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('assets/js/imgfix.min.js')}}"></script>
-    <script src="{{asset('assets/js/mixitup.js')}}"></script>
-    <script src="{{asset('assets/js/accordions.js')}}"></script>
-
-    <!-- Global Init -->
-    <script src="{{asset('assets/js/custom.js')}}"></script>
-
-    </body>
-</html>
-@extends("layouts.footer")
+@include("layouts.footer")

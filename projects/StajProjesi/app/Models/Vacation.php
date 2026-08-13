@@ -16,11 +16,21 @@ class Vacation extends Model
             'image',
         ];
 
-    public static function getVacationCard(){
+//    public static function getVacationCard(){
+//
+//        return DB::table('vacations')
+//            ->join('vacation_prices', 'vacations.id', '=', 'vacation_prices.vacation_id')
+//            ->get(['vacations.*', 'vacation_prices.price']);
+//
+//    }
 
+    public static function getPaginatedVacations($adet){
         return DB::table('vacations')
             ->join('vacation_prices', 'vacations.id', '=', 'vacation_prices.vacation_id')
-            ->get(['vacations.*', 'vacation_prices.price']);
+            ->selectRaw('vacations.*, MIN(vacation_prices.price) as min_price, MAX(vacation_prices.price) as max_price')
+            ->groupBy('vacations.id')
+            ->paginate($adet);
+
 
     }
 
