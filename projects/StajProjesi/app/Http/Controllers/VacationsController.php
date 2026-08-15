@@ -19,7 +19,7 @@ class VacationsController extends Controller
 //            return $price;
 //        });
 
-        $mappingVacation = Vacation::getPaginatedVacations(1);
+        $mappingVacation = Vacation::getPaginatedVacations(2);
 
         return view('vacations', compact('mappingVacation'));
     }

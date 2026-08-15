@@ -14,7 +14,7 @@
         <div class="video-overlay header-text">
             <div class="caption">
                 <h6>Yıldızların altında, sınırları aşan bir tatil deneyimi</h6>
-                <h2>Yıldızların altında <em>sınırları aşan bir tatil deneyimi</em></h2>
+                <h2>ASTROSTAY <em>VACATION</em></h2>
                 <div class="main-button">
                     <a href="{{route('contact')}}">Bize Ulaşın</a>
                 </div>

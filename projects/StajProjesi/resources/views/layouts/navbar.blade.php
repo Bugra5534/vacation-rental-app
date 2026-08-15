@@ -49,6 +49,20 @@
                             <a href="{{route('about')}}" >Hakkımızda</a>
                         </li>
                         <li><a href="{{route('contact')}}">Iletisim</a></li>
+                        @auth
+                            <!-- Adam GİRİŞ YAPDIYSA burası görünecek -->
+
+                            <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                                @csrf
+                                <button type="submit" class="btn btn-outline-danger btn-sm">Çıkış Yap</button>
+                            </form>
+                        @else
+                            <!-- Adam GİRİŞ YAPMADIYSA (misafirse) burası görünecek -->
+                            <li><a href="{{route('login')}}">Giris Yap</a></li>
+                        @endauth
+
+
+
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
